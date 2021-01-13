@@ -1,3 +1,5 @@
+$(document).ready(function() {
+
 var currentDay = $("#currentDay");
 
 currentDay.html(moment().format("dddd, MMMM Do"));
@@ -5,6 +7,8 @@ currentDay.html(moment().format("dddd, MMMM Do"));
 const currentHour = moment().hour();
 
   var rowBlocks = $(".color"); 
+  
+colorBlocks ();
 
 function colorBlocks() {
  
@@ -28,3 +32,6 @@ function colorBlocks() {
 
   }
 }
+
+}); 
+
