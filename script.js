@@ -4,28 +4,27 @@ currentDay.html(moment().format("dddd, MMMM Do"));
 
 const currentHour = moment().hour();
 
+  var rowBlocks = $(".color"); 
+
 function colorBlocks() {
-  var rowBlocks = $(".color");
  
   for (var i = 0; i < rowBlocks.length; i++) {
-    var timeBlock = rowBlocks[i];
+ 
+   var timeBlock = rowBlocks[i];
 
     if (timeBlock.dataset.time < currentHour) {  
-      $(rowBlocks).addClass ("past")
+      $(timeBlock).addClass ("past")
         //do something for the past
 
     } else if (timeBlock.dataset.time > currentHour) {
-      $(rowBlocks).addClass ("future")
+      $(timeBlock).addClass ("future")
         // do something for the future
 
     } else {
 
-      $(rowBlocks).addClass ("present")
+      $(timeBlock).addClass ("present")
         //do something for present 
     }
 
   }
 }
-console.log (rowBlocks)
-  console.log (timeBlock)
-  console.log (currentHour)
