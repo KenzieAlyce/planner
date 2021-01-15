@@ -6,27 +6,12 @@ currentDay.html(moment().format("dddd, MMMM Do"));
 
 const currentHour = moment().hour();
 
-  var rowBlocks = $(".color"); 
-
+   var rowBlocks = $(".color"); 
    var button1 = $("#button1");
    var textBox1 = $('#textBox1');
    var theText = $('textBox1.val');
-  var theTextArray = [""];
-
-
-
-  $("#button1").on('click', saveLocal());
+   var theTextArray = [""];
   
-   function saveLocal() {
-localStorage.setItem(textBox1.val, 
-JSON.stringify.theTextArray) 
-
-//then 
-
-//if (theText = null)
-//JSON.parse(localStorage.getItem("theTextArray")
-
-}
 colorBlocks ();
 
 function colorBlocks() {
@@ -37,19 +22,34 @@ function colorBlocks() {
 
     if (timeBlock.dataset.time < currentHour) {  
       $(timeBlock).addClass ("past")
-        //do something for the past
 
     } else if (timeBlock.dataset.time > currentHour) {
       $(timeBlock).addClass ("future")
-        // do something for the future
-
     } else {
 
       $(timeBlock).addClass ("present")
-        //do something for present 
     }
 
   }
 }
+  
 
-}); 
+//function populateTextAreas() {
+  //text_areas = $(".text-area")
+  
+  //for (i = 0; i > text_areas.length; i++) {
+    //  var stored_text = localStorage.getItem(text_areas[i].id)
+      //text_areas[i].value = stored_text
+  //}
+//}
+
+//$(".saveBtn").on("click", function(e) {
+  //e.preventDefault();
+  
+  //var hour_id = this.previousElementSibling.id;
+  //var hour_text = this.previousElementSibling.value;
+  
+ // localStorage.setItem(hour_id, hour_text);
+//}); 
+});
+
