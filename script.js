@@ -34,7 +34,7 @@ function colorBlocks() {
 }
   
 
-//function populateTextAreas() {
+//function addText() {
   //text_areas = $(".text-area")
   
   //for (i = 0; i > text_areas.length; i++) {
