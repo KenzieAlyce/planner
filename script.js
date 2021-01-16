@@ -1,7 +1,11 @@
 var schedulerArray = localStorage.getItem("scheduling") !== null ? JSON.parse(localStorage.getItem("scheduling")) : [];
+
+$("#currentDay").text(moment().format("dddd, MMMM Do"));
 const currentHour = moment().hour();
 var rowBlocks = $(".color");
+
 colorBlocks ();
+
 function colorBlocks() {
   for (var i = 0; i < rowBlocks.length; i++) {
    var timeBlock = rowBlocks[i];
@@ -15,6 +19,7 @@ function colorBlocks() {
     }
   }
 }
+
 var saveScheduler = function(){
 var tempArry = []
 $("#scheduling .row").each(function(){
@@ -25,9 +30,11 @@ $("#scheduling .row").each(function(){
         [rowTime]: rowTaskText
     })
 })
+
  localStorage.setItem("scheduling",JSON.stringify(tempArry));
 }
 // local scheduler 
+
 var loadScheduler = function(){
  if (schedulerArray.length === 0 ){return}
  $.each(schedulerArray, function(index, objData){
@@ -37,6 +44,5 @@ var loadScheduler = function(){
      targetRow.find("textarea").text(task);
  })
 }
-$("#currentDay").text(moment().format("dddd, MMMM Do"));
 $(".saveBtn").on("click",saveScheduler);
  loadScheduler();
