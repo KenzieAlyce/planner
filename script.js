@@ -10,7 +10,7 @@ const currentHour = moment().hour();
    var button1 = $("#button1");
    var textBox1 = $('#textBox1');
    var theText = $('textBox1.val');
-
+   var theTextArray = [""];
   
 colorBlocks ();
 
@@ -38,9 +38,9 @@ function colorBlocks() {
   
 populateTextAreas()
 function populateTextAreas() {
-  text_areas = $(".enterText")
+ var text_areas = $(".enterText")
   
-  for (i = 0; i > text_areas.length; i++) {
+  for ( var i = 0; i < text_areas.length; i++) {
       var stored_text = localStorage.getItem(text_areas[i].id)
       text_areas[i].value = stored_text
   }
